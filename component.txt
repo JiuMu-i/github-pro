@@ -1,0 +1,23 @@
+Regular模块
+	简介: 关于页面元素正则校验的工具.
+	使用:
+		1.script标签type="module"
+		2.import {Regular} from 'component.js的相对路径/绝对路径';
+		3.let regular = new Regular();
+		4.regular.doms = 需要校验的目标元素的id值列表 // 传入一个数组
+		5.regular.type = 需要使用的正则表达式的key值
+		6.regular.match(); // 返回boolean
+		附: regular.type 是必须指定的,如果传入的是 -1,则可以自定义正则表达式. regular.expression = 自定义正则表达式
+			regular.type 数值集合在后期维护中会有新增,也可以自己修改
+			如果只需要判断某一个字符串的值,可以不指定regular.doms,调用regular.match方法是,传入需要校验的字符串
+Datetime模块
+	简介: 关于页面时间戳与日期的相互转换工具
+	使用:
+		1.script标签type="module"
+		2.import {Datetime} from 'component.js的相对路径/绝对路径';
+		3.let dt = new Datetime(`yyyy-MM-dd`);
+		4.console.log(dt.format(1573714889123)); // 2019-11-14 15:01:29:123
+		附: 时间格式目前支持 'yyyy', 'yyyy-MM', 'yyyy-MM-dd', 'yyyy-MM-dd HH', 'yyyy-MM-dd HH:mm', 'yyyy-MM-dd HH:mm:ss', 'yyyy-MM-dd HH:mm:ss:sss'
+			七种方式,可根据需要任意选择.
+			如果需要日期格式转long值,可以直接使用dt.format(`2019-11-14`);
+			
